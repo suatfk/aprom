@@ -1,12 +1,27 @@
 package accountability;
 
+import lombok.Getter;
+import lombok.Setter;
+
 public class Accountability {
 
-    private AccountabilityType accountabilityType;
+    @Getter
+    @Setter
+    private AccountabilityType type;
 
-    private Party party;
+    @Getter
+    @Setter
+    private Party responsible;
 
-    private Party parent;
+    @Getter
+    private Party commissioner;
 
+    @Getter
+    @Setter
     private DateRange timePeriod;
+
+    public void setResponsible(Party responsible) {
+        type.getConstraints().apply(commissioner, responsible);
+        this.responsible = responsible;
+    }
 }

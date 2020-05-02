@@ -1,5 +1,7 @@
 package accountability.rule;
 
+import accountability.Party;
+
 import java.util.ArrayList;
 import java.util.List;
 
